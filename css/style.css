@@ -92,9 +92,15 @@ body{
 .pos1 {
     left: -1500px !important;
 }
+.pos1_5 {
+    left: -1500px !important;
+}
 
 .pos2 {
     left: -3000px !important;
+}
+.pos3 {
+    left: -4500px !important;
 }
 
 @keyframes rotating {
@@ -109,10 +115,34 @@ body{
 #requin {
     opacity: 1;
     width: 15%;
-    z-index: 10;
+    z-index: -7;
     position: absolute;
-    top: 15%;
-    left: 800px;
-    animation: rotating 2s linear infinite;
+    top: 40%;
+    left: 0;
 
+
+}
+#hyppo {
+    opacity: 1;
+    width: 5%;
+    z-index: 50;
+    position: absolute;
+    top: 65%;
+    left: 8%;
+}
+#tortue{
+    opacity: 1;
+    width: 12%;
+    position: absolute;
+    top: 65%;
+    z-index: 20;
+    left: 58%;
+}
+#text{
+    width: 350px;
+    background-color: white;
+    padding: 5px;
+    text-align: center;
+    margin-left: 100px;
+    border-radius: 10px;
 }

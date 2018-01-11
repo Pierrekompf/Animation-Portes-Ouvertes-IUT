@@ -6,33 +6,49 @@ var button = document.getElementById('begin');
 var requin = document.getElementById('requin');
 var rocher1 = document.getElementById('rocher1');
 var rocher2 = document.getElementById('rocher2');
+var hyppo = document.getElementById('hyppo');
+var tortue = document.getElementById('tortue');
+var text = document.getElementById('text');
 
 document.addEventListener('click', function(){
   if (sand.classList.contains('display_in_rocks')){
     sand.classList.remove('display_in_rocks');
+    sand.classList.add('pos0');
     setTimeout(function(){
-      requin.classList.remove('display_in');
+      requin.classList.remove('display_out');
       rocher1.classList.remove('display_in_rocks');
+      hyppo.classList.remove('display_out');
     }, 500);
-  } else {
+  }
+  else if (sand.classList.contains('pos0')){
+    sand.classList = '';
+    sand.classList.add('pos0.5');
+    text.innerHTML='Bravo tu as trouvé Lenny le requin derrière le rocher ! Touche l\'écran pour continuer';
+    requin.style.left = '30%';
+    requin.style.top = '10%';
+    requin.style.animation = 'rotating 2s linear infinite';
+  }
+  else if (sand.classList.contains('pos0.5')) {
 
     // if (sand.classList.contains('pos1')) {
       requin.classList.add('display_out');
+      text.innerHTML='Maintenant essaye de trouver où se cache la tortue !';
       rocher1.classList.add('display_in_rocks');
       rocher2.classList.remove('display_in_rocks');
       sand.classList = '';
-      sand.classList.add('pos2');
+      sand.classList.add('pos1');
       setTimeout(function(){
         requin.classList.add('display_in');
         requin.classList.remove('display_out');
+        tortue.classList.remove('display_in_rocks');
       }, 1000)
-    // } else {
-    //   sand.classList.add('pos1');
-    //   setTimeout(function(){
-    //     requin.classList.remove('display_in');
-    //     rocher1.classList.remove('display_in_rocks');
-    //   }, 500);
-    // }
+  }
+  else if (sand.classList.contains('pos1')){
+      sand.classList = '';
+      sand.classList.add('pos1_5');
+      text.innerHTML='Bravo tu as trouvé Franklin la tortue ! Touche l\'écran pour continuer';
+      tortue.style.top = '20%';
+      requin.style.animation = 'swing 2s linear infinite';
   }
   button.classList.add('display');
   start();
