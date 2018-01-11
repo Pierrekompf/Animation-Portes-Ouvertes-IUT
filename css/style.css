@@ -1,3 +1,7 @@
+* {
+    transition: ease-out 1s;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -37,6 +41,7 @@ body{
 }
 
 #sand {
+    z-index:20;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -44,7 +49,34 @@ body{
     width: 8000px;
     height: 200px;
     display: block;
-    transition: cubic-bezier(.12,.84,.98,.79) 1s;
+}
+
+.display_out {
+    opacity: 0 !important;
+    left: -500px !important;
+}
+
+.display_in {
+    opacity: 0 !important;
+    left: 300% !important;
+}
+.display_in_rocks {
+    bottom: -300% !important;
+}
+
+#rocher1 {
+    position: absolute;
+    left:0;
+    bottom: 15%;
+    width: 20%;
+}
+
+#rocher2 {
+    position: absolute;
+    left: 800px;
+    bottom: 5%;
+    width: 25%;
+    z-index: 30;
 }
 
 .pos1 {
@@ -53,4 +85,24 @@ body{
 
 .pos2 {
     left: -3000px !important;
+}
+
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+#requin {
+    opacity: 1;
+    width: 15%;
+    z-index: 10;
+    position: absolute;
+    top: 15%;
+    left: 800px;
+    animation: rotating 2s linear infinite;
+
 }
