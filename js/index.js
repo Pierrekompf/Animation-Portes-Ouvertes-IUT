@@ -9,18 +9,33 @@ var rocher2 = document.getElementById('rocher2');
 var hyppo = document.getElementById('hyppo');
 var tortue = document.getElementById('tortue');
 var text = document.getElementById('text');
+var bas_aqua = document.getElementById('bas_aqua');
+var haut_aqua = document.getElementById('haut_aqua');
+var vitre = document.getElementById('vitre');
+var reflet = document.getElementById('reflet');
 
 document.addEventListener('click', function(){
   if (sand.classList.contains('display_in_rocks')){
-      start2();
-    sand.classList.remove('display_in_rocks');
-    sand.classList.add('pos0');
-    setTimeout(function(){
-      requin.classList.remove('display_out');
-      rocher1.classList.remove('display_in_rocks');
+    bas_aqua.classList.remove('display_in_rocks');
+    haut_aqua.classList.remove('display_in_vitre');
+    vitre.classList.remove('display_in_vitre');
+    reflet.classList.remove('display_in_vitre');
 
-      hyppo.classList.remove('display_out');
-    }, 1000);
+    setTimeout(function () {
+      start2();
+
+      sand.classList.remove('display_in_rocks');
+
+      sand.classList.add('pos0');
+      setTimeout(function(){
+        requin.classList.remove('display_out');
+        rocher1.classList.remove('display_in_rocks');
+
+        hyppo.classList.remove('display_out');
+      }, 1000);
+    }, 1000)
+
+
   }
   else if (sand.classList.contains('pos0')){
     sand.classList = '';
