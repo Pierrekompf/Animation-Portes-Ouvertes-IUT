@@ -9,6 +9,8 @@ body{
     bottom:40%;
     left: 40%;
     text-align: center;
+    opacity : 1;
+    transition: opacity .5s ease-in-out;
 }
 .enter{
     color : white;
@@ -32,8 +34,7 @@ body{
     height: 100%;
 }
 .display{
-    display: none;
-    transition: .5s ease;
+    opacity : 0;
 }
 
 #sand {
@@ -43,8 +44,12 @@ body{
     background: url("../img/sand.svg");
     width: 8000px;
     height: 200px;
-    display: block;
+    display : block;
     transition: cubic-bezier(.12,.84,.98,.79) 1s;
+}
+
+#fonds{
+    transition: opacity 6s;
 }
 
 .pos1 {
