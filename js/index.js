@@ -9,11 +9,13 @@ var rocher2 = document.getElementById('rocher2');
 
 document.addEventListener('click', function(){
   if (sand.classList.contains('display_in_rocks')){
+    start();
     sand.classList.remove('display_in_rocks');
     setTimeout(function(){
       requin.classList.remove('display_in');
       rocher1.classList.remove('display_in_rocks');
-    }, 500);
+      start2();
+    }, 1000);
   } else {
 
     // if (sand.classList.contains('pos1')) {
@@ -25,7 +27,7 @@ document.addEventListener('click', function(){
       setTimeout(function(){
         requin.classList.add('display_in');
         requin.classList.remove('display_out');
-      }, 1000)
+      }, 1000);
     // } else {
     //   sand.classList.add('pos1');
     //   setTimeout(function(){
@@ -35,5 +37,4 @@ document.addEventListener('click', function(){
     // }
   }
   button.classList.add('display');
-  start();
 });
