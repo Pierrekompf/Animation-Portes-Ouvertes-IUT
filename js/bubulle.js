@@ -1,7 +1,8 @@
+var timer;
+
+
 var w = window.innerWidth;
 var h = window.innerHeight;
-console.log(w);
-console.log(h);
 
 var c = document.getElementById("monCanevas");
 c.width = w - 60;
@@ -25,11 +26,9 @@ function creerEtoile(id, posX, posY, rayon, couleur, vitesse) {
     listeEtoiles[id] = monEtoile;
 }
 
-for (var i = 0; i < 500; i++) {
+for (var i = 0; i < 300; i++) {
     creerEtoile(i.toString(), alea(0, w), alea(h - 20, h + 500), alea(18, 22), 'rgba(' + alea(131, 194) + ',' + alea(208, 232) + ',' + alea(254, 255) + ', ' + Math.random() * 0.7 + ')', alea(1, 5));
 }
-
-console.log(listeEtoiles[3]);
 
 function dessine() {
     ctx.clearRect(0, 0, monCanevas.width, monCanevas.height);
@@ -51,20 +50,18 @@ function bouge() {
     for (cle in listeEtoiles) {
         listeEtoiles[cle].y -= listeEtoiles[cle].v;
         listeEtoiles[cle].x += alea(-3, 3);
-        listeEtoiles[cle].v += 0.3;
+        listeEtoiles[cle].v += 0.2;
         listeEtoiles[cle].r += 0.2;
         if (listeEtoiles[cle].y < -10) {
-            listeEtoiles[cle].y = h - 100;
-            listeEtoiles[cle].r = alea(1, 4);
-            listeEtoiles[cle].v = alea(1, 5);
+            delete listeEtoiles[cle];
+            // listeEtoiles[cle].y = h - 100;
+            // listeEtoiles[cle].r = alea(1, 4);
+            // listeEtoiles[cle].v = alea(1, 5);
         }
     }
     dessine();
 }
 
-var timer;
-
 function start() {
-    console.log("start bouge");
     timer = setInterval("bouge()", 33);
 }

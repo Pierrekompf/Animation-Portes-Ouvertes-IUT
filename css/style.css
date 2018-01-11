@@ -6,7 +6,7 @@ body{
     margin: 0;
     padding: 0;
     background: #9eaec9;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .begin{
     position: absolute;
@@ -50,7 +50,8 @@ body{
     width: 8000px;
     height: 200px;
     display : block;
-    transition: cubic-bezier(.12,.84,.98,.79) 1s;
+    opacity:1;
+    /*transition: cubic-bezier(.12,.84,.98,.79) 1s;*/
 }
 
 .display_out {
@@ -63,10 +64,12 @@ body{
     left: 300% !important;
 }
 .display_in_rocks {
-    bottom: -300% !important;
+    opacity: 0 !important;
+    bottom: -50% !important;
 }
 
 #rocher1 {
+    opacity: 1;
     position: absolute;
     left:0;
     bottom: 15%;
@@ -74,6 +77,7 @@ body{
 }
 
 #rocher2 {
+    opacity:1;
     position: absolute;
     left: 800px;
     bottom: 5%;
