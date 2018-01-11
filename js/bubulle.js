@@ -118,3 +118,7 @@ function start2() {
   }
   timer2 = setInterval("bougeBulles()", 33);
 }
+function stop(){
+    ctx.clearRect(0, 0, monCanevas.width, monCanevas.height);
+  clearInterval(timer2);
+}
