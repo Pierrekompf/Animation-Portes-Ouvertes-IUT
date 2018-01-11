@@ -1,5 +1,8 @@
 body{
-    background-color: black;
+    margin: 0;
+    padding: 0;
+    background: #9eaec9;
+    overflow-x: hidden;
 }
 .begin{
     position: absolute;
@@ -31,4 +34,23 @@ body{
 .display{
     display: none;
     transition: .5s ease;
+}
+
+#sand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url("../img/sand.svg");
+    width: 8000px;
+    height: 200px;
+    display: block;
+    transition: cubic-bezier(.12,.84,.98,.79) 1s;
+}
+
+.pos1 {
+    left: -1500px !important;
+}
+
+.pos2 {
+    left: -3000px !important;
 }
