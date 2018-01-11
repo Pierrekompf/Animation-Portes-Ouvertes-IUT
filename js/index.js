@@ -12,13 +12,15 @@ var text = document.getElementById('text');
 
 document.addEventListener('click', function(){
   if (sand.classList.contains('display_in_rocks')){
+      start2();
     sand.classList.remove('display_in_rocks');
     sand.classList.add('pos0');
     setTimeout(function(){
       requin.classList.remove('display_out');
       rocher1.classList.remove('display_in_rocks');
+
       hyppo.classList.remove('display_out');
-    }, 500);
+    }, 1000);
   }
   else if (sand.classList.contains('pos0')){
     sand.classList = '';
@@ -29,19 +31,7 @@ document.addEventListener('click', function(){
     requin.style.animation = 'rotating 2s linear infinite';
   }
   else if (sand.classList.contains('pos0.5')) {
-
-    // if (sand.classList.contains('pos1')) {
-      requin.classList.add('display_out');
-      text.innerHTML='Maintenant essaye de trouver où se cache la tortue !';
-      rocher1.classList.add('display_in_rocks');
-      rocher2.classList.remove('display_in_rocks');
-      sand.classList = '';
-      sand.classList.add('pos1');
-      setTimeout(function(){
-        requin.classList.add('display_in');
-        requin.classList.remove('display_out');
         tortue.classList.remove('display_in_rocks');
-      }, 1000)
   }
   else if (sand.classList.contains('pos1')){
       sand.classList = '';
@@ -51,5 +41,4 @@ document.addEventListener('click', function(){
       requin.style.animation = 'swing 2s linear infinite';
   }
   button.classList.add('display');
-  start();
 });

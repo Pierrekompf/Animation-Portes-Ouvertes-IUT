@@ -8,6 +8,11 @@ body{
     background: #9eaec9;
     overflow: hidden;
 }
+
+#monCanevas{
+    z-index:0;
+}
+
 .begin{
     position: absolute;
     bottom:40%;
