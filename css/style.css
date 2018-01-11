@@ -7,6 +7,7 @@ body{
     padding: 0;
     background: #9eaec9;
     overflow: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 #monCanevas{
@@ -144,10 +145,23 @@ body{
     left: 58%;
 }
 #text{
-    width: 350px;
-    background-color: white;
-    padding: 5px;
+    width: 500px;
+    position: absolute;
+    top: 55%;
+    font-weight: bold;
+    font-size: 20px;
     text-align: center;
-    margin-left: 100px;
-    border-radius: 10px;
+    margin-left: 33%;
+    opacity: 0;
+    transition: 1s ease;
+}
+#seal{
+    width: 350px;
+    height: 300px;
+    top: 20%;
+    left: 37%;
+    position: absolute;
+}
+#seal img {
+    width: 100%;
 }

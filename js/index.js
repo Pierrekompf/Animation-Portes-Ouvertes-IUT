@@ -8,6 +8,7 @@ var rocher1 = document.getElementById('rocher1');
 var rocher2 = document.getElementById('rocher2');
 var hyppo = document.getElementById('hyppo');
 var tortue = document.getElementById('tortue');
+var seal = document.getElementById('seal');
 var text = document.getElementById('text');
 
 document.addEventListener('click', function(){
@@ -18,9 +19,11 @@ document.addEventListener('click', function(){
     setTimeout(function(){
       requin.classList.remove('display_out');
       rocher1.classList.remove('display_in_rocks');
-
       hyppo.classList.remove('display_out');
     }, 1000);
+    setTimeout(function(){
+        text.style.opacity = '1';
+    }, 2500)
   }
   else if (sand.classList.contains('pos0')){
     sand.classList = '';
@@ -48,7 +51,16 @@ document.addEventListener('click', function(){
       sand.classList.add('pos1_5');
       text.innerHTML='Bravo tu as trouvé Franklin la tortue ! Touche l\'écran pour continuer';
       tortue.style.top = '20%';
-      requin.style.animation = 'swing 2s linear infinite';
+      tortue.style.animation = 'swing 2s linear';
+  } else if (sand.classList.contains('pos1_5')){
+      sand.classList='';
+      sand.classList.add('pos2');
+      rocher2.classList.add('display_in_rocks');
+      // text.innerHTML='Je crois avoir aperçu quelque chose dans les buissons vite clique !';
+      tortue.style.top = '-500px';
+      tortue.style.animation = 'swing 2s linear';
+      text.innerHTML='Bravo ! Tu as trouvé tous mes amis ! Tu as suffisamment de talent pour les TP de réseau !';
+      seal.classList.remove('display_in_rocks');
   }
   button.classList.add('display');
 });
