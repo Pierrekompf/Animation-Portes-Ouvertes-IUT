@@ -1,6 +1,7 @@
 // var animationToCheck = document.getElementById("animate");
 // var animationToCheck2 = document.getElementById("animate2");
 // var animationToCheck3 = document.getElementById("animate3");
+var click = document.getElementById('click');
 var sand = document.getElementById('sand');
 var button = document.getElementById('begin');
 var requin = document.getElementById('requin');
@@ -15,7 +16,7 @@ var haut_aqua = document.getElementById('haut_aqua');
 var vitre = document.getElementById('vitre');
 var reflet = document.getElementById('reflet');
 
-document.addEventListener('click', function(){
+click.addEventListener('click', function(){
   if (sand.classList.contains('display_in_rocks')){
       button.classList.add('display');
     bas_aqua.classList.remove('display_in_rocks');

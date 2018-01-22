@@ -21,6 +21,7 @@ body{
     text-align: center;
     opacity : 1;
     transition: opacity .5s ease-in-out;
+    z-index: 10001;
 }
 .enter{
     color : white;
@@ -213,4 +214,35 @@ body{
     height: 100%;
     width: 50%;
     opacity: .4;
+}
+
+#return{
+    z-index: 10003;
+    position: absolute;
+    display: block;
+}
+
+.exit{
+    color : white;
+    background-color: black;
+    border : 2px solid white;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: auto;
+    cursor : pointer;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.exit:hover{
+    background-color: white;
+    color: black;
+    transition: .5s ease;
+}
+.exit a:hover{
+    color: black;
+    transition: .5s ease;
+}
+.exit a {
+    color: white;
+    text-decoration: none;
 }
